@@ -1,8 +1,8 @@
 # Summary
-简介
-线性回归
-简单线性回归
-多元线性回归
-Ridge回归
-Lasso回归
-决策树
+
+* [Introduction](README.md)
+* [线性回归](chapter1/线性回归.md)
+    * [简单线性回归](chapter1/简单线性回归.md)
+    * [多元线性回归](chapter1/多元线性回归.md)
+* [Chapter2](chapter2/README.md)
+
