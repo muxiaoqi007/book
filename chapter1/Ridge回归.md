@@ -1,8 +1,5 @@
-```
 ## 岭回归（Ridge Redression）
-```
 
-```
 在平方误差的基础上加上正则项
 $$
 J(θ)=\frac{1}{m}\sum_{i=1}^{m}(y^{(i)}−(wx^{(i)}+b))^2+λ||w||_2^2=MSE(θ)+λ\sum_{i=1}^{n}θ_i^2
@@ -17,7 +14,7 @@ $$
 $$
 θ=(\mathbf{X}^\mathrm{T}X+λI)^{−1}(\mathbf{X}^\mathrm{T}y)
 $$
-```
+
 
 
 
