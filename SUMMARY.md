@@ -13,5 +13,5 @@
     * [C4.5算法实现](chapter2/chang-jian-suan-fa/c45suan-fa-shi-xian.md)
     * [CART算法实现](chapter2/chang-jian-suan-fa/cartsuan-fa-shi-xian.md)
   * [决策树可视化](chapter2/jue-ce-shu-ke-shi-hua.md)
-
+  * [决策树实战](chapter2/jue-ce-shu-shi-zhan.md)
 
