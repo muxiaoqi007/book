@@ -41,9 +41,13 @@ $$
 ## CART算法
 
 使用GINI增益作为划分选择的标准，可用于分类和回归，**构建是二叉树**
-
-
-
+$$
+\
+begin{align}
+Gini(D)&=\sum_{k=1}^{|y|}\sum_{k'\neq{k}}p_kp_{k'}\\
+&=1-\sum_{k=1}^{|y|}p_k^2
+\end{align}
+$$
   
 
 
