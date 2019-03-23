@@ -1,6 +1,6 @@
-ID3算法实现
+# ID3算法实现
 
-- 1 先创建数据集,
+## 先创建数据集,
 
 ```python
 def createDataSet():
@@ -13,7 +13,7 @@ def createDataSet():
     return dataSet, labels
 ```
 
-- 2 划分数据集
+## 划分数据集
 
  ```python
   def splitDataSet(dataSet, axis, value):
@@ -38,7 +38,7 @@ def createDataSet():
 ->[[1, 'maybe'], [1, 'yes'], [0, 'no']]
 ```
 
-- 3选择最好的划分
+## 选择最好的划分
 
 ```python
 def chooseBestFeatureToSplit(dataSet):
@@ -82,7 +82,7 @@ def calcShannonEnt(dataSet):
         return shannonEnt
 ```
 
-- 4 构建决策树
+## 构建决策树
 
 ```python
 def majortyCnt(classList):        
