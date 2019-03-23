@@ -122,5 +122,6 @@ $$
 
 CART决策树使用基尼指数，定义如下：
 $$
-Gini(D)=\sum_{k=1}^{|y|}\sum_{{k'}}p_kp_{k'}
+\
+Gini(D)=\sum_{k=1}^{|y|}\sum_{k'\neq{k}}p_kp_{k'}
 $$
