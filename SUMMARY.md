@@ -8,4 +8,5 @@
   * [Lasso回归](chapter1/lassohui-gui.md)
   * [梯度下降](ti-du-xia-jiang.md)
 * [决策树](chapter2/README.md)
+  * [决策树可视化](jue-ce-shu-ke-shi-hua.md)
 
