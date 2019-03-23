@@ -122,6 +122,15 @@ $$
 
 CART决策树使用基尼指数，定义如下：
 $$
-\
-Gini(D)=\sum_{k=1}^{|y|}\sum_{k'\neq{k}}p_kp_{k'}
+\begin{align}
+Gini(D)&=\sum_{k=1}^{|y|}\sum_{k'\neq{k}}p_kp_{k'}\\
+&=1-\sum_{k=1}^{|y|}p_k^2
+\end{align}
+$$
+
+Gini(D)反映了从数据集D中随机抽取两个样本，其类别标记不一样的概率，**所以Gini(D)越小，D的纯度越高**
+
+属性a的基尼指数定义：
+$$
+Gini_index(D,a)=\sum_{v=1}^{V}\frac{|D^v|}{|D|}Gini(D^v)
 $$
