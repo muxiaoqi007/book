@@ -6,5 +6,6 @@
   * [多元线性回归](chapter1/多元线性回归.md)
   * [Ridge回归](chapter1/Ridge回归.md)
   * [Lasso回归](chapter1/lassohui-gui.md)
+  * [梯度下降](ti-du-xia-jiang.md)
 * [决策树](chapter2/README.md)
 
