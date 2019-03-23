@@ -22,7 +22,7 @@ $$
 ## C4.5
 基于ID3,进行了优化，使用信息增益率，在树的构造过程中会进行**剪枝**操作进行优化，能够自动完成对连续属性的离散化处理，
 $$
-Gain_ratio(D,a) = \frac{Gain(D,a)}{IV(a)},
+Gain\_ratio(D,a) = \frac{Gain(D,a)}{IV(a)},
 \\其中,IV(a)=-\sum_{v=1}^{V}\frac{|D^v|}{|D|}\log_2\frac{|D^v|}{|D|}
 $$
 **优点**：
