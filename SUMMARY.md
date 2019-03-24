@@ -14,5 +14,5 @@
     * [CART算法实现](chapter2/chang-jian-suan-fa/cartsuan-fa-shi-xian.md)
   * [决策树可视化](chapter2/jue-ce-shu-ke-shi-hua.md)
   * [决策树实战](chapter2/jue-ce-shu-shi-zhan.md)
-* [K近邻](kjin-lin.md)
+* [K近邻](chapter3/kjin-lin.md)
 
