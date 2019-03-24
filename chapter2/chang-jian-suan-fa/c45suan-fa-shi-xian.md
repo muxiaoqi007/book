@@ -1,5 +1,7 @@
 # C4.5算法实现
 
+基于ID3算法，
+
 ```python
 def chooseBestFeatureToSplit(dataSet):
         numFeatures = len(dataSet[0]) - 1 
