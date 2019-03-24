@@ -5,21 +5,24 @@ $$
 Ent(D) = -\sum_{k=1}^{|y|}p_k\log_{2}{p_k} \\
 Gain(D,a) = Ent(D)-\sum_{v=1}^{V}\frac{|D^v|}{D}Ent(D^v)
 $$
+
+### 步骤
 输入：训练数据集D，特征集A，阈值ε；
 
 输出：决策树T.
 
-**Step1：**若D中所有实例属于同一类$$C_k​$$，则T为单结点树，并将类![img](https://shuwoom.com/wp-content/uploads/2018/10/9a2d62e98799d878be2e3d6133772b3c.png)作为该节点的类标记，返回T；
+**Step1：**若D中所有实例属于同一类$$C_k​$$，则T为单结点树，并将类$$C_k$$作为该节点的类标记，返回T；
 
-**Step2：**若A=Ø，则T为单结点树，并将D中实例数最大的类![img](https://shuwoom.com/wp-content/uploads/2018/10/9a2d62e98799d878be2e3d6133772b3c.png)作为该节点的类标记，返回T；
+**Step2：**若A=Ø，则T为单结点树，并将D中实例数最大的类$$C_k$$作为该节点的类标记，返回T；
 
-**Step3：**否则，2.1.1（3）计算A中个特征对D的信息增益，选择信息增益最大的特征![img](https://shuwoom.com/wp-content/uploads/2018/10/2ec429afd34217f1c3677724fa8fb15b.png)；
+**Step3：**否则，计算A中个特征对D的信息增益，选择信息增益最大的特征$$A_k$$；
 
-**Step4：**如果![img](https://shuwoom.com/wp-content/uploads/2018/10/07879f0e470512329a1ca3eff7be1cb0.png)的信息增益小于阈值ε，则T为单节点树，并将D中实例数最大的类![img](https://shuwoom.com/wp-content/uploads/2018/10/9a2d62e98799d878be2e3d6133772b3c.png)作为该节点的类标记，返回T
+**Step4：**如果$$A_g$$的信息增益小于阈值ε，则T为单节点树，并将D中实例数最大的类$$C_k$$作为该节点的类标记，返回T
 
-**Step5：**否则，对![img](https://shuwoom.com/wp-content/uploads/2018/10/07879f0e470512329a1ca3eff7be1cb0.png)的每一种可能值![img](https://shuwoom.com/wp-content/uploads/2018/10/676a8c839495baa86c594cbd06039139.png)，依![img](https://shuwoom.com/wp-content/uploads/2018/10/ba8c5b3f3d3f616ee756237cef210963.png)将D分割为若干非空子集![img](https://shuwoom.com/wp-content/uploads/2018/10/8c90311426a3327e30c3664e1d2e9ef8.png)，将![img](https://shuwoom.com/wp-content/uploads/2018/10/8c90311426a3327e30c3664e1d2e9ef8.png)中实例数最大的类作为标记，构建子结点，由结点及其子树构成树T，返回T；
+**Step5：**否则，对$$A_g$$的每一种可能值$$a_i$$依$$A_g=a_i$$将D分割为若干非空子集$$D_i$$，将$$D_i$$中实例数最大的类作为标记，构建子结点，由结点及其子树构成树T，返回T；
 
-**Step6：**对第i个子节点，以![img](https://shuwoom.com/wp-content/uploads/2018/10/8c90311426a3327e30c3664e1d2e9ef8.png)为训练集，以![img](https://shuwoom.com/wp-content/uploads/2018/10/6176289f227123f374bc1c33f6a0cb6b.png)为特征集合，递归调用**Step1~step5**，得到子树![img](https://shuwoom.com/wp-content/uploads/2018/10/6109eab53b1abe5b2eb330cf3427b86a.png)，返回![img](https://shuwoom.com/wp-content/uploads/2018/10/6109eab53b1abe5b2eb330cf3427b86a.png)；
+**Step6：**对第i个子节点，以$$D_i$$为训练集，以$$A-\{A_g\}$$为特征集合，递归调用**Step1~step5**，得到子树$$T_i$$，返回$$T_i$$；
+
 
 **优点**：
 
