@@ -15,6 +15,6 @@
   * [决策树可视化](chapter2/jue-ce-shu-ke-shi-hua.md)
   * [决策树实战](chapter2/jue-ce-shu-shi-zhan.md)
 * [K近邻](chapter3/kjin-lin.md)
-  * [python实现](chapter3/kjin-lin/pythonshi-xian.md)
+  * [python实现](chapter3/pythonshi-xian.md)
 * [Logistic](chapter4/Logistic.md)
 
