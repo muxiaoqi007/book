@@ -1,6 +1,8 @@
 # ID3算法实现
 
-## 先创建数据集,
+## 方法1
+
+### 先创建数据集
 
 ```python
 def createDataSet():
@@ -13,7 +15,7 @@ def createDataSet():
     return dataSet, labels
 ```
 
-## 划分数据集
+### 划分数据集
 
  ```python
   def splitDataSet(dataSet, axis, value):
@@ -38,7 +40,7 @@ def createDataSet():
 ->[[1, 'maybe'], [1, 'yes'], [0, 'no']]
 ```
 
-## 选择最好的划分
+### 选择最好的划分
 
 ```python
 def chooseBestFeatureToSplit(dataSet):
@@ -82,7 +84,7 @@ def calcShannonEnt(dataSet):
         return shannonEnt
 ```
 
-## 构建决策树
+### 构建决策树
 
 ```python
 def majortyCnt(classList):        
@@ -115,4 +117,88 @@ def createTree(dataSet,labels):
                                    (dataSet, bestFeat, value),subLabels)
         return myTree
 ```
+
+## 方法2
+
+1. 划分数据
+
+```python
+def split(X, y, d, value):
+    index_a = (X[:,d] <= value)
+    index_b = (X[:,d] > value)
+    return X[index_a], X[index_b], y[index_a], y[index_b]
+```
+2.计算信息熵
+
+
+```python
+from collections import Counter
+from math import log
+
+def entropy(y):
+    """计算信息熵"""
+    counter = Counter(y)
+    Ent = 0.0
+    for num in counter.values():
+        p = num / len(y)
+        Ent += -p * log(p)
+    return Ent
+```
+
+3.选择最优
+
+
+```python
+def try_split(X, y):
+    
+    best_entropy = float('inf')
+    best_d, best_v = -1, -1
+    for d in range(X.shape[1]):
+        sorted_index = np.argsort(X[:,d])
+        for i in range(1, len(X)):
+            if X[sorted_index[i], d] != X[sorted_index[i-1], d]:
+                v = (X[sorted_index[i], d] + X[sorted_index[i-1], d])/2
+                X_l, X_r, y_l, y_r = split(X, y, d, v)
+                p_l, p_r = len(X_l) / len(X), len(X_r) / len(X)
+                e = p_l * entropy(y_l) + p_r * entropy(y_r)
+                if e < best_entropy:
+                    best_entropy, best_d, best_v = e, d, v
+                
+    return best_entropy, best_d, best_v
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
