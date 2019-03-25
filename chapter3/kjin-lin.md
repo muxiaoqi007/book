@@ -72,6 +72,11 @@ def createDataSet():
     return group, labels
 ```
 
+```python
+group, labels = createDataSet()
+group
+```
+
 
 
 ```python
