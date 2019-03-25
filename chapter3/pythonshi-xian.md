@@ -50,3 +50,29 @@ def classify0(inx, dataSet, labels, k):
 ```
 
 可以修改为如下：
+
+
+```python
+def classify1(inx, dataSet, labels, k):
+    '''
+    函数功能：   kNN分类
+    Input:      inX: 测试集 (1xN)
+                dataSet: 已知数据的特征(NxM)
+                labels: 已知数据的标签或类别(1xM vector)
+                k: k近邻算法中的k
+    Output:     测试样本最可能所属的标签
+    '''
+    # 计算距离 
+    distances = [np.sqrt(np.sum((x_train - inx)**2)) for x_train in dataSet]
+    
+    sortedDistIndicies = np.argsort(distances)
+    classCount = {}
+    # 选择距离最小的K个点
+    topK_y = [labels[idx] for idx in sortedDistIndicies[:k]]
+    from collections import Counter
+    votes = Counter(topK_y)
+    return votes.most_common(1)[0][0]
+
+```
+
+
