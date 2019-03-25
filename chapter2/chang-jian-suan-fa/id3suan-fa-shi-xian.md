@@ -72,7 +72,7 @@ def chooseBestFeatureToSplit(dataSet):
 def calcShannonEnt(dataSet):
         numEntries = len(dataSet)
         labelCounts = {}
-        for featVec in dataSet: #the the number of unique elements and their occurance
+        for featVec in dataSet: 
                 currentLabel = featVec[-1]
                 if currentLabel not in labelCounts.keys(): labelCounts[currentLabel] = 0
                 labelCounts[currentLabel] += 1

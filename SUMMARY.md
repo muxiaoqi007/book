@@ -17,4 +17,5 @@
 * [K近邻](chapter3/kjin-lin.md)
   * [python实现](chapter3/pythonshi-xian.md)
 * [Logistic](chapter4/Logistic.md)
+  * [实现](chapter4/shi-xian.md)
 
