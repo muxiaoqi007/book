@@ -1,3 +1,10 @@
 {
-    "plugins": ["mathjax","-highlight"]
+    "plugins": ["mathjax","-highlight","prism", "prism-themes"]
+}
+"pluginsConfig": {
+  "prism": {
+    "css": [
+      "prismjs/themes/prism-solarizedlight.css"
+    ]
+  }
 }
