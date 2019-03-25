@@ -73,8 +73,12 @@ def createDataSet():
 ```
 
 ```python
-group, labels = createDataSet()
-group
+- group, labels = createDataSet()
+- group
+- array([[1. , 1.1],
+       [1. , 1. ],
+       [0. , 0. ],
+       [0. , 0.1]])
 ```
 
 
@@ -89,14 +93,15 @@ def classify0(inx, dataSet, labels, k):
                 k: k近邻算法中的k
     Output:     测试样本最可能所属的标签
     '''
-    dataSetSize = dataSet.shape[0]
+    dataSetSize = dataSet.shape[0] # 数据行数
     # 计算距离 
-    diffMat = np.tile(inx, (dataSetSize, 1)) - dataSet
+    diffMat = np.tile(inx, (dataSetSize, 1)) - dataSet 
+    # 复制inx为和数据集同样的行数，然后求差
     sqDiffMat = diffMat ** 2
-    sqDistances = sqDiffMat.sum(axis=1)
-    distances = sqDistances ** 0.5
+    sqDistances = sqDiffMat.sum(axis=1) # 按行求和
+    distances = sqDistances ** 0.5 
     
-    sortedDistIndicies = distances.argsort()
+    sortedDistIndicies = distances.argsort() # 对distances的元素从小到大排列，取其index
     classCount = {}
     # 选择距离最小的K个点
     for i in range(k):
