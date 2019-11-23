@@ -121,4 +121,5 @@
   * [0427 建立四叉树](Leetcode/0427建立四叉树.md)
 * [powerbi函数](powerbihan-shu.md)
   * [EARlIER](powerbihan-shu/a.md)
+* DATEDIFF
 
